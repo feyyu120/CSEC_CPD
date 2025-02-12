@@ -1,0 +1,22 @@
+import math
+
+def gcd(a, b):
+    if b == 0:
+        return a
+    return gcd(b, a % b)
+
+def solve():
+    y, w = map(int, input().split())
+    
+    max_val = max(y, w)
+    
+    wins = 6 - max_val + 1
+    
+    common_divisor = gcd(wins, 6)
+    
+    numerator = wins // common_divisor
+    denominator = 6 // common_divisor
+    
+    print(f"{numerator}/{denominator}")
+
+solve()
