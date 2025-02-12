@@ -1,0 +1,16 @@
+s = input()
+t = input()
+
+position = 1
+stone_index = 0
+
+for instruction in t:
+    if stone_index < len(s) and instruction == s[stone_index]:
+        position += 1
+        stone_index += 1
+    elif stone_index < len(s):
+        pass
+    else:
+      break
+
+print(position)
