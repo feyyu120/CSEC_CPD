@@ -1,0 +1,17 @@
+n = int(input())
+a = list(map(int, input().split()))
+m = int(input())
+
+for _ in range(m):
+    x, y = map(int, input().split())
+    x -= 1  # Adjust index to be 0-based
+
+    if x > 0:
+        a[x - 1] += y - 1  # Birds flying to the left
+    if x < n - 1:
+        a[x + 1] += a[x] - y  # Birds flying to the right
+
+    a[x] = 0  # All birds on the x-th wire are gone
+
+for birds in a:
+    print(birds)
